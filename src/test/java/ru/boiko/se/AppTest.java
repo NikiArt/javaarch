@@ -1,6 +1,8 @@
 package ru.boiko.se;
 
 import org.junit.Test;
+import ru.boiko.se.homeworktwo.IntCmp;
+import ru.boiko.se.homeworktwo.MyArrayList;
 
 import static org.junit.Assert.assertTrue;
 
