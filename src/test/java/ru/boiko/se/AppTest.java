@@ -1,8 +1,6 @@
 package ru.boiko.se;
 
 import org.junit.Test;
-import ru.boiko.se.homeworktwo.IntCmp;
-import ru.boiko.se.homeworktwo.MyArrayList;
 
 import static org.junit.Assert.assertTrue;
 
@@ -43,6 +41,22 @@ public class AppTest {
         }
     }
 
+    public static String reverse(String original) {
+        if (original.length() == 0) return original;
+        StringBuilder sb = new StringBuilder();
+        MyArrayStack<Character> stack = new MyArrayStack<Character>();
+
+        for (int i = 0; i < original.length(); i++) {
+            stack.push(original.charAt(i));
+        }
+
+        while (!stack.isEmpty()) {
+            sb.append(stack.pop());
+        }
+
+        return sb.toString();
+    }
+
     private MyArrayList copyList(MyArrayList listS) {
         final MyArrayList<Integer> currentList = new MyArrayList<>();
         for (int i = 0; i < listS.size(); i++) {
@@ -58,5 +72,14 @@ public class AppTest {
             currentList.add(val);
         }
         return currentList;
+    }
+
+    @Test
+    public void reverseStringFun() {
+        String currentString = "abcdef";
+        System.out.println(currentString);
+        String reversString = reverse(currentString);
+        System.out.println(reversString);
+
     }
 }

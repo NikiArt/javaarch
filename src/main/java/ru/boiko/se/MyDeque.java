@@ -1,4 +1,4 @@
-package ru.boiko.se.homeworkthree;
+package ru.boiko.se;
 
 import java.util.NoSuchElementException;
 

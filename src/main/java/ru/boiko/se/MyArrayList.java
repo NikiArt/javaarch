@@ -1,4 +1,4 @@
-package ru.boiko.se.homeworktwo;
+package ru.boiko.se;
 
 import java.util.Comparator;
 import java.util.Iterator;
