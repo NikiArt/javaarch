@@ -95,10 +95,12 @@ public class AppTest {
             while (map.height() < treeHeight + 1) {
                 value = (int) (Math.random() * 200 - 100);
                 map.put(value, value);
+                //System.out.println(map.height());
             }
             if (map.isBalanced()) balanced++;
         }
 
+        System.out.println(balanced);
         double balancedP = (balanced / treeNumber) * 100;
 
         System.out.println("Balanced trees - " + balancedP + "%");

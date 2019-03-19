@@ -186,6 +186,17 @@ public class MyTreeMap<Key extends Comparable<Key>, Value> {
         return isBalanced(root);
     }
 
+    private static double exp(int value, int power) {
+        if (value == 0) return 0;
+        if (power == 0) return 1;
+
+        if (power > 0) {
+            return exp(value, --power) * value;
+        } else {
+            return 1 / exp(value, (power * (-1)));
+        }
+    }
+
     private boolean isBalanced(Node node) {
         if (node == null) return true;
         if (!isBalanced(node.left) || !isBalanced(node.right)) return false;
@@ -200,7 +211,8 @@ public class MyTreeMap<Key extends Comparable<Key>, Value> {
         }
 
         //System.out.println(Math.abs(left-right));
-        return Math.abs(left - right) < 2;
+        //return Math.abs(left - right) < 2;
+        return exp(left - right, 2) < 2;
 
     }
 
@@ -221,11 +233,13 @@ public class MyTreeMap<Key extends Comparable<Key>, Value> {
         }
 
         private void currentHeight() {
+            height = 1;
             if (left != null) {
-                height = left.height + 1;
+                height += left.height;
             }
             if (right != null) {
-                height = (height < right.height) ? right.height + 1 : height;
+                int newHeight = 1 + right.height;
+                if (newHeight > height) height = newHeight;
             }
         }
     }
