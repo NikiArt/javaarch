@@ -82,4 +82,26 @@ public class AppTest {
         System.out.println(reversString);
 
     }
+
+    @Test
+    public void balanceTree() {
+        int treeNumber = 20;
+        int treeHeight = 6;
+        int balanced = 0;
+        int value = 0;
+        for (int i = 0; i < treeNumber; i++) {
+            MyTreeMap<Integer, Integer> map = new MyTreeMap<>();
+
+            while (map.height() < treeHeight + 1) {
+                value = (int) (Math.random() * 200 - 100);
+                map.put(value, value);
+            }
+            if (map.isBalanced()) balanced++;
+            map.remove(value);
+        }
+
+        double balancedP = (balanced / treeNumber) * 100;
+
+        System.out.println("Balanced trees - " + balancedP + "%");
+    }
 }
