@@ -97,7 +97,6 @@ public class AppTest {
                 map.put(value, value);
             }
             if (map.isBalanced()) balanced++;
-            map.remove(value);
         }
 
         double balancedP = (balanced / treeNumber) * 100;
