@@ -5,6 +5,11 @@ public class App {
     public static void main(String[] args) {
         System.out.println(exp(5, 4));
         System.out.println(expLoop(2, 10));
+        createChainingHashMap();
+    }
+
+    private static void createChainingHashMap() {
+        final MyChainingHashMap<String, String> map = new MyChainingHashMap<String, String>();
     }
 
     private static double exp(int value, int power) {
