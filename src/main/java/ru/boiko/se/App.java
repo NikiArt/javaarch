@@ -3,13 +3,18 @@ package ru.boiko.se;
 public class App {
 
     public static void main(String[] args) {
-        System.out.println(exp(5, 4));
-        System.out.println(expLoop(2, 10));
         createChainingHashMap();
     }
 
     private static void createChainingHashMap() {
-        final MyChainingHashMap<String, String> map = new MyChainingHashMap<String, String>();
+        final MyChainingHashMap<Character, Integer> map = new MyChainingHashMap<Character, Integer>();
+        map.put('a', 1);
+        map.put('r', 7);
+        map.put('i', 22);
+        map.put('t', 31);
+        map.put('l', 678);
+        map.put('z', 32);
+
     }
 
     private static double exp(int value, int power) {
